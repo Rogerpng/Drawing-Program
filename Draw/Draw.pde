@@ -6,7 +6,7 @@ Boolean draw=false;
 
 void setup() {
   size(500, 600);
-  
+
   EraseButtonSetup();
   quitButtonSetup();
   drawingSurfaceX = width*0;
@@ -20,12 +20,14 @@ void setup() {
   rect(drawingSurfaceX, drawingSurfaceY, drawingSurfaceWidth, drawingSurfaceHeight);
 }
 
+
+
 void draw() {
   quitButtonDraw();
   EraseButtonDraw();
-  if (draw == true) {
-    fill(ink);
+  if (mousePressed == true) {
     line(mouseX, mouseY, pmouseX, pmouseY);
+    fill(ink);
   }
 }
 

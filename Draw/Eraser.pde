@@ -3,8 +3,9 @@ String EraseTitle = "Eraser";
 PFont EraseButtonFont;
 color Red = #EA112E; //Ink
 color BlueEraseButton = #6311EA;
-color PinkEraseButton = #EA11E7;
+color PinkEraseButton = #FC7DBB;
 color eraser = #FFFFFF;
+float EraseButtonRect;
 void EraseButtonRect() {
   rect(width*5/6, height*1/2, width*1/10, height*1/10);
 }
@@ -34,19 +35,7 @@ void EraseButtonDraw() {
 }
 
 void EraseButtonMouseClicked() {
-  if (mouseX >= width*5/6  && mouseX <= width && mouseY >= height*1/2 && mouseY <= height*1/10) {
-    if (draw == true) 
-      fill(eraser);
-    line(mouseX, mouseY, pmouseX, pmouseY);
-
-
-    if ( mouseX>drawingSurfaceX  && mouseX<drawingSurfaceX+drawingSurfaceWidth  && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
-
-      if (draw == false) {
-        draw = true;
-      } else {
-        draw = false;
-      }
-    }
+  if (mousePressed == true) {
+    println("EraserClicked");
   }
-}
+}//End EraseButtonMouseClicked
