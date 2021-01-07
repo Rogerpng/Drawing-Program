@@ -27,9 +27,8 @@ void quitButtonDraw() {
   fill(purple); //Ink, hexidecimal copied from Color Selector
   textAlign (CENTER, CENTER); //Align X&Y, see Processing.org / Reference
   //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
-  textFont(quitButtonFont, 20); //Change the number until it fits, largest font size
+  textFont(quitButtonFont, 12); //Change the number until it fits, largest font size
   text(title, width*19/20, height*0, width*1/20, height*1/20);
-  fill(255); //Reset to white for rest of the program
 }
 
 void quitButtonMouseClicked() {
