@@ -29,6 +29,7 @@ int button3X, button3Y, button3Width, button3Height;
 void setup() {
   size(600, 500);
   background(255);
+  smooth();
   //fill(redC );
   button3X = width*19/20;
   button3Y = height*1/18;
@@ -43,7 +44,7 @@ void setup() {
   pic = loadImage("AngryBird.gif");
   pic2 = loadImage("SpiderMan.jpg");
 
-  rect(drawingSurfaceX, drawingSurfaceY, drawingSurfaceWidth, drawingSurfaceHeight);
+  //rect(drawingSurfaceX, drawingSurfaceY, drawingSurfaceWidth, drawingSurfaceHeight);
 
   imageX = width*0;
   imageY = height*0;
@@ -62,7 +63,7 @@ void setup() {
   drawingSurfaceWidth = width*1;
   drawingSurfaceHeight = height*1;
   //
-  ink = black; 
+  //ink = black; 
   //
 }
 
@@ -90,8 +91,8 @@ void draw() {
   //if (imageSOn == true && imageOn == false) image(pic, image2X, image2Y, image2Width, image2Height);
   //if (imageSOn == false && imageOn == true) image(pic, imageX, imageY, imageWidth, imageHeight);
 
-  if (mousePressed == true) {
-    line(mouseX, mouseY, pmouseX, pmouseY);
+  {
+    //line(mouseX, mouseY, pmouseX, pmouseY);
     fill(ink);
     fill(redC );
     rect(10, 10, 25, 25 );
@@ -203,7 +204,7 @@ void draw() {
 void mousePressed() {
   //EraseButtonMouseClicked();
   if (mouseX>button2X && mouseX<button2X+button2Width && mouseY>button2Y && mouseY<button2Y+button2Height)  image(pic, imageX, imageY, imageWidth, imageHeight);
-  if (mouseX>buttonX && mouseX<button3X+button3Width && mouseY>button3Y && mouseY<button3Y+button3Height) image(pic2, image2X, image2Y, image2Width, image2Height);
+  if (mouseX>button3X && mouseX<button3X+button3Width && mouseY>button3Y && mouseY<button3Y+button3Height) image(pic2, image2X, image2Y, image2Width, image2Height);
 
   quitButtonMouseClicked();
   if ( mouseX>drawingSurfaceX  && mouseX<drawingSurfaceX+drawingSurfaceWidth  && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
