@@ -18,13 +18,16 @@ color pink= #FF95F8;
 color yellowOrange= #F7C870;
 color buttonColour;
 color button2Colour, JadeGreen = #32F78F;
+color button3Colour, sunBlue = #94A2FC;
 float buttonX;
 float buttonY;
 float masterStroke= 1;
-PImage pic, pic2;
+PImage pic, pic2, pic3;
 float imageX, imageY, imageWidth, imageHeight;
 float image2X, image2Y, image2Width, image2Height;
+float image3X, image3Y, image3Width, image3Height;
 int button3X, button3Y, button3Width, button3Height;
+int button4X, button4Y, button4Width, button4Height;
 
 void setup() {
   size(600, 500);
@@ -40,9 +43,16 @@ void setup() {
   button2Y = height*1/9;
   button2Width = width*1/18;
   button2Height = height*1/18;
+
+  button4X = width*19/20;
+  button4Y = height*1/6;
+  button4Width = width*1/18;
+  button4Height = height*1/18;
+
   //fill(white);
   pic = loadImage("AngryBird.gif");
   pic2 = loadImage("SpiderMan.jpg");
+  pic3 = loadImage("Spongebob.jpg");
 
   //rect(drawingSurfaceX, drawingSurfaceY, drawingSurfaceWidth, drawingSurfaceHeight);
 
@@ -55,6 +65,11 @@ void setup() {
   image2Y = height*0;
   image2Width = width*1;
   image2Height = height*1;
+
+  image3X = width*0;
+  image3Y = height*0;
+  image3Width = width*1;
+  image3Height = height*1;
 
   //EraseButtonSetup();
   quitButtonSetup();
@@ -86,6 +101,11 @@ void draw() {
   button2Colour = JadeGreen;
   fill(button2Colour);
   rect(button3X, button3Y, button3Width, button3Height);
+  fill(white);
+
+  button3Colour = sunBlue;
+  fill(button3Colour);
+  rect(button4X, button4Y, button4Width, button4Height);
   fill(white);
 
   //if (imageSOn == true && imageOn == false) image(pic, image2X, image2Y, image2Width, image2Height);
@@ -205,6 +225,7 @@ void mousePressed() {
   //EraseButtonMouseClicked();
   if (mouseX>button2X && mouseX<button2X+button2Width && mouseY>button2Y && mouseY<button2Y+button2Height)  image(pic, imageX, imageY, imageWidth, imageHeight);
   if (mouseX>button3X && mouseX<button3X+button3Width && mouseY>button3Y && mouseY<button3Y+button3Height) image(pic2, image2X, image2Y, image2Width, image2Height);
+  if (mouseX>button4X && mouseX<button4X+button4Width && mouseY>button4Y && mouseY<button4Y+button4Height) image(pic3, image3X, image3Y, image3Width, image3Height);
 
   quitButtonMouseClicked();
   if ( mouseX>drawingSurfaceX  && mouseX<drawingSurfaceX+drawingSurfaceWidth  && mouseY>drawingSurfaceY && mouseY<drawingSurfaceY+drawingSurfaceHeight ) {
